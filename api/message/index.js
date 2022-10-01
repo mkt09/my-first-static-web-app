@@ -1,4 +1,5 @@
-const redis = require("../node_modules/redis");
+// const redis = require("redis");
+import {redis} from "redis";
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
