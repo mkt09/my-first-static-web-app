@@ -7,7 +7,11 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/identity": "^3.0.0"
+    "@azure/identity": "^3.0.0",
+    "azure-keyvault": "^3.0.5",
+    "bluebird": "^3.7.2",
+    "dotenv": "^16.0.3",
+    "redis": "^4.3.1"
   },
   "devDependencies": {
     "azure-keyvault": "^3.0.5",
