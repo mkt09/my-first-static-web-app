@@ -47,10 +47,11 @@ module.exports = async function (context, req) {
 
     // Simple get and put of integral data types into the cache
     context.log("\nCache command: GET Message");
-    context.log("Cache response : " + await cacheConnection.get("Message"));
+    result = await cacheConnection.get("Message");
+    context.log("Cache response : " + result);
 
     return Promise.resolve({
-        text: "Hello from the API connection string "
+        text: "Hello from the API connection string " + result
     })
 
 
