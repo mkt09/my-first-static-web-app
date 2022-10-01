@@ -1,8 +1,8 @@
 // const redis = require("redis");
 // const KeyVault = require('azure-keyvault');
 // const AuthenticationContext = require('adal-node').AuthenticationContext;
-const { SecretClient } = require("@azure/keyvault-secrets");
-const { DefaultAzureCredential } = require("@azure/identity");
+// const { SecretClient } = require("@azure/keyvault-secrets");
+// const { DefaultAzureCredential } = require("@azure/identity");
 
 
 module.exports = async function (context, req) {
@@ -63,6 +63,6 @@ module.exports = async function (context, req) {
 
 
     context.res.json({
-        text: "Hello from the API"
+        text: "Hello from the API ippppppppppppppppp"
     });
 };
