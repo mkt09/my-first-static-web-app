@@ -6,7 +6,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "@azure/identity": "^3.0.0"
+  },
   "devDependencies": {
     "azure-keyvault": "^3.0.5",
     "bluebird": "^3.7.2",
