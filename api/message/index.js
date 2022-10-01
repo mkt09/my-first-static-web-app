@@ -1,20 +1,20 @@
-// const redis = require("redis");
-// const KeyVault = require('azure-keyvault');
-// const AuthenticationContext = require('adal-node').AuthenticationContext;
+const redis = require("redis");
+const KeyVault = require('azure-keyvault');
+const AuthenticationContext = require('adal-node').AuthenticationContext;
 
-// const authenticator = function(challenge, callback) {
+const authenticator = function(challenge, callback) {
 
-//     // Create a new authentication context.
-//     const context = new AuthenticationContext(challenge.authorization);
+    // Create a new authentication context.
+    const context = new AuthenticationContext(challenge.authorization);
 
-//     // Use the context to acquire an authentication token.
-//     return context.acquireTokenWithClientCredentials(challenge.resource, process.env.CLIENT_ID, process.env.CLIENT_SECERET, function(err, tokenResponse) {
-//         if (err) throw err;
-//         // Calculate the value to be set in the request's Authorization header and resume the call.
-//         const authorizationValue = tokenResponse.tokenType + ' ' + tokenResponse.accessToken;
-//         return callback(null, authorizationValue);
-//     });
-// };
+    // Use the context to acquire an authentication token.
+    return context.acquireTokenWithClientCredentials(challenge.resource, process.env.CLIENT_ID, process.env.CLIENT_SECERET, function(err, tokenResponse) {
+        if (err) throw err;
+        // Calculate the value to be set in the request's Authorization header and resume the call.
+        const authorizationValue = tokenResponse.tokenType + ' ' + tokenResponse.accessToken;
+        return callback(null, authorizationValue);
+    });
+};
 
 
 module.exports = async function (context, req) {
