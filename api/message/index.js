@@ -1,4 +1,5 @@
 var _ = require('lodash');
+const redis = require('redis');
 
 module.exports = async function (context, req) {
 
