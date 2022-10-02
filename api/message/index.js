@@ -1,5 +1,3 @@
-// const redis = require("redis");
-// import {redis} from "redis";
 var _ = require('lodash');
 
 module.exports = async function (context, req) {
