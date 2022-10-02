@@ -1,5 +1,6 @@
 // const redis = require("redis");
-import {redis} from "redis";
+// import {redis} from "redis";
+var _ = require('lodash');
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
