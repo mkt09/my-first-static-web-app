@@ -3,6 +3,6 @@
         "rewrite": "/index.html"
     },
     "platform": {
-        "apiRuntime": "node:16"
+        "apiRuntime": "node:14"
     }
 }
