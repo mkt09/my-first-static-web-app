@@ -10,16 +10,6 @@
 			}
 		},
 		{
-			"type": "func",
-			"command": "host start",
-			"problemMatcher": "$func-node-watch",
-			"isBackground": true,
-			"dependsOn": "npm build (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
-		},
-		{
 			"type": "shell",
 			"label": "npm build (functions)",
 			"command": "npm run build",
@@ -35,6 +25,82 @@
 			"command": "npm prune --production",
 			"dependsOn": "npm build (functions)",
 			"problemMatcher": [],
+			"options": {
+				"cwd": "${workspaceFolder}/api"
+			}
+		},
+		{
+			"label": "clean (functions)",
+			"command": "dotnet",
+			"args": [
+				"clean",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"type": "process",
+			"problemMatcher": "$msCompile",
+			"options": {
+				"cwd": "${workspaceFolder}/api"
+			}
+		},
+		{
+			"label": "build (functions)",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"type": "process",
+			"dependsOn": "clean (functions)",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": "$msCompile",
+			"options": {
+				"cwd": "${workspaceFolder}/api"
+			}
+		},
+		{
+			"label": "clean release (functions)",
+			"command": "dotnet",
+			"args": [
+				"clean",
+				"--configuration",
+				"Release",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"type": "process",
+			"problemMatcher": "$msCompile",
+			"options": {
+				"cwd": "${workspaceFolder}/api"
+			}
+		},
+		{
+			"label": "publish (functions)",
+			"command": "dotnet",
+			"args": [
+				"publish",
+				"--configuration",
+				"Release",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"type": "process",
+			"dependsOn": "clean release (functions)",
+			"problemMatcher": "$msCompile",
+			"options": {
+				"cwd": "${workspaceFolder}/api"
+			}
+		},
+		{
+			"type": "func",
+			"command": "host start",
+			"problemMatcher": "$func-node-watch",
+			"isBackground": true,
+			"dependsOn": "npm build (functions)",
 			"options": {
 				"cwd": "${workspaceFolder}/api"
 			}
