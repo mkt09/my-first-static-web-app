@@ -4,5 +4,11 @@
     },
     "platform": {
         "apiRuntime": "node:14"
-    }
+    },
+    "routes": [
+    {
+        "route": "/api/*",
+        "methods": ["GET"],
+        "allowedRoles": ["authenticated"]
+    }]
 }
